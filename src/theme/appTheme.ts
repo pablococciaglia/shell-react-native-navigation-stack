@@ -24,4 +24,32 @@ export const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
+  avatar: {
+    height: 100,
+    width: 100,
+    alignSelf: 'center',
+    borderRadius: 100,
+    marginTop: 30,
+    borderColor: 'gold',
+    borderStyle: 'solid',
+    borderWidth: 3,
+  },
+  menuContainer: {
+    marginVertical: 20,
+    marginHorizontal: 10,
+  },
+  menuText: {
+    fontSize: 20,
+    color: 'grey',
+  },
+  menuButton: {
+    borderRadius: 100,
+    borderColor: 'black',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    backgroundColor: 'lightgrey',
+    paddingLeft: 20,
+    paddingVertical: 3,
+    marginTop: 10,
+  },
 });
