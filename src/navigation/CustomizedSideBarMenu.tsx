@@ -9,10 +9,12 @@ import {SettingsScreen} from '../screens/SettingsScreen';
 import {Image, useWindowDimensions, View, Text} from 'react-native';
 import {styles} from '../theme/appTheme';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Tabs} from './Tabs';
 
 export type RootDrowerParams = {
   StackNavigator: undefined;
   SettingsScreen: undefined;
+  Tabs: undefined;
 };
 const Drawer = createDrawerNavigator<RootDrowerParams>();
 
@@ -35,6 +37,7 @@ export const CustomizedSideBarMenu = () => {
         options={{title: 'Settings'}}
         component={SettingsScreen}
       />
+      <Drawer.Screen name={'Tabs'} options={{title: 'Tabs'}} component={Tabs} />
     </Drawer.Navigator>
   );
 };
@@ -62,6 +65,12 @@ const InternalMenu = ({navigation}: DrawerContentComponentProps) => {
           onPress={() => navigation.navigate('SettingsScreen')}
           style={styles.menuButton}>
           <Text style={styles.menuText}>Settings</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Tabs')}
+          style={styles.menuButton}>
+          <Text style={styles.menuText}>Tabs</Text>
         </TouchableOpacity>
       </View>
     </DrawerContentScrollView>

@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Button} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import {styles} from '../theme/appTheme';
 import {RootStackParams} from '../navigation/StackNavigator';
+import {TopTabNavigator} from '../navigation/TopTabNavigator';
 
 interface Props extends StackScreenProps<RootStackParams, 'Page3Screen'> {}
 
@@ -16,6 +17,7 @@ export const Page3Screen: FC<Props> = ({navigation}) => {
         title="go to the first page of the stack"
         onPress={() => navigation.popToTop()}
       />
+      <TopTabNavigator />
     </View>
   );
 };

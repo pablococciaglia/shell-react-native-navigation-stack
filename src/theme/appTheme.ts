@@ -1,5 +1,17 @@
 import {StyleSheet} from 'react-native';
 
+export const colors = StyleSheet.create({
+  backgroundRed: {
+    backgroundColor: 'red',
+  },
+  backgroundBlue: {
+    backgroundColor: 'blue',
+  },
+  backgroundGreen: {
+    backgroundColor: 'green',
+  },
+});
+
 export const styles = StyleSheet.create({
   globalMargin: {
     marginHorizontal: 20,
@@ -31,7 +43,6 @@ export const styles = StyleSheet.create({
     borderRadius: 100,
     marginTop: 30,
     borderColor: 'gold',
-    borderStyle: 'solid',
     borderWidth: 3,
   },
   menuContainer: {
@@ -45,7 +56,6 @@ export const styles = StyleSheet.create({
   menuButton: {
     borderRadius: 100,
     borderColor: 'black',
-    borderStyle: 'solid',
     borderWidth: 2,
     backgroundColor: 'lightgrey',
     paddingLeft: 20,
