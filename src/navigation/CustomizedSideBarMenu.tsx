@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
   createDrawerNavigator,
 } from '@react-navigation/drawer';
-import {StackNavigator} from './StackNavigator';
-import {SettingsScreen} from '../screens/SettingsScreen';
 import {Image, useWindowDimensions, View, Text} from 'react-native';
-import {styles} from '../theme/appTheme';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {AuthContext} from '../context/AuthContext';
+import {SettingsScreen} from '../screens/SettingsScreen';
+import {styles} from '../theme/appTheme';
 import {Tabs} from './Tabs';
+import {StackNavigator} from './StackNavigator';
 
 export type RootDrowerParams = {
   StackNavigator: undefined;
@@ -43,6 +44,7 @@ export const CustomizedSideBarMenu = () => {
 };
 
 const InternalMenu = ({navigation}: DrawerContentComponentProps) => {
+  const {signIn, signOut, authState} = useContext(AuthContext);
   return (
     <DrawerContentScrollView>
       <View>
@@ -72,6 +74,16 @@ const InternalMenu = ({navigation}: DrawerContentComponentProps) => {
           style={styles.menuButton}>
           <Text style={styles.menuText}>Tabs</Text>
         </TouchableOpacity>
+
+        {authState.isLoggedIn ? (
+          <TouchableOpacity onPress={signOut} style={styles.menuButton}>
+            <Text style={styles.menuText}>Log out</Text>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={signIn} style={styles.menuButton}>
+            <Text style={styles.menuText}>Log in</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </DrawerContentScrollView>
   );

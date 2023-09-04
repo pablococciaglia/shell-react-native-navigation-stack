@@ -1,14 +1,20 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/dist/Ionicons';
+import {View} from 'react-native';
+import {TouchableIcon} from '../components/TouchableIcon';
 
 export const Tab2Screen = () => {
-  const rocket = <Icon name="rocket" size={30} color="#900" />;
-  const eyedrop = <Icon name="eyedrop-outline" size={30} color="#900" />;
   return (
     <View>
-      <Text>{rocket}</Text>
-      <Text>{eyedrop}</Text>
+      <TouchableIcon iconName={'rocket'} />
+      <TouchableIcon iconName={'eyedrop'} />
+      <TouchableIcon iconName={'arrow-redo-outline'} />
+      <TouchableIcon iconName={'flame-outline'} />
+      <TouchableIcon iconName={'skull-outline'} />
+      <TouchableIcon iconName={'logo-firebase'} />
+      <TouchableIcon iconName={'logo-facebook'} />
+      <TouchableIcon iconName={'logo-whatsapp'} />
+      <TouchableIcon iconName={'logo-react'} />
+      <TouchableIcon iconName={'logo-instagram'} />
     </View>
   );
 };
